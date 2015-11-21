@@ -470,6 +470,11 @@ static RNFrostedSidebar *rn_frostedMenu;
     [self showAnimated:YES];
 }
 
+- (void)changeImage:(UIImage *)image forItemAtIndex:(NSUInteger)index {
+    RNCalloutItemView *view = [_itemViews objectAtIndex:index];
+    view.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+}
+
 #pragma mark - Dismiss
 
 - (void)dismiss {

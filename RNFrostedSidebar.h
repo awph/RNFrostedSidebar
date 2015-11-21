@@ -78,4 +78,6 @@
 - (void)dismissAnimated:(BOOL)animated;
 - (void)dismissAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
 
+- (void)changeImage:(UIImage *)image forItemAtIndex:(NSUInteger)index;
+
 @end
