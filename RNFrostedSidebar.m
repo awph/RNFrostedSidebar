@@ -329,7 +329,7 @@ static RNFrostedSidebar *rn_frostedMenu;
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 
@@ -488,16 +488,16 @@ static RNFrostedSidebar *rn_frostedMenu;
 - (void)dismissAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
     void (^completionBlock)(BOOL) = ^(BOOL finished){
         [self rn_removeFromParentViewControllerCallingAppearanceMethods:YES];
-      
+        
         if ([self.delegate respondsToSelector:@selector(sidebar:didDismissFromScreenAnimated:)]) {
             [self.delegate sidebar:self didDismissFromScreenAnimated:YES];
         }
         
         rn_frostedMenu = nil;
         
-		if (completion) {
-			completion(finished);
-		}
+        if (completion) {
+            completion(finished);
+        }
     };
     
     if ([self.delegate respondsToSelector:@selector(sidebar:willDismissFromScreenAnimated:)]) {
