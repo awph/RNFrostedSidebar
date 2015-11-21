@@ -11,7 +11,7 @@ For some thoughts on live blur in iOS apps, check out my [blog post](http://whoi
 
 You'll notice that this control's use of blur does not match Jakub's original design exactly. In the original design the background of the buttons is blurred, while the overlay of the control is simply shaded. There have [been](https://github.com/alexdrone/ios-realtimeblur) [attempts](https://github.com/JagCesar/iOS-blur) at recreating this effect, but it is [rumored](http://stackoverflow.com/a/17299759/940936) that live-blurring takes place at a much lower level on the GPU and there would be security concerns were we to have access.
 
-Apple is being a little deceptive with their use of blurring in iOS 7. Bottom line, **don't animate blurs** in your designs. 
+Apple is being a little deceptive with their use of blurring in iOS 7. Bottom line, **don't animate blurs** in your designs.
 
 If you examine the source of this project you'll see that I'm actually [cheating](https://github.com/rnystrom/RNFrostedSidebar/blob/master/RNFrostedSidebar.m#L371) to get the blur layer to animate overtop the original view.
 
@@ -22,7 +22,7 @@ If you examine the source of this project you'll see that I'm actually [cheating
 The preferred method of installation is with [CocoaPods](http://cocoapods.org/). Just add this line to your Podfile.
 
 ```
-pod 'RNFrostedSidebar', '~> 0.2.0'
+pod 'RNFrostedSidebar', :git => 'https://github.com/awph/RNFrostedSidebar.git', :tag => '0.2.1'
 ```
 
 Or if you want to install manually, drag and drop the <code>RNFrostedSidebar</code> .h and .m files into your project. To get this working, you'll need to include the following frameworks in **Link Binary with Libraries**:
